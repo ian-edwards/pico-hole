@@ -1,8 +1,11 @@
 import network
 import time
 
-def is_connected():
+def ok():
     return network.WLAN(network.STA_IF).isconnected()
+
+def status():
+    return network.WLAN(network.STA_IF).ifconfig()
 
 def connect(wifi_name, wifi_password, connect_timeout, poll_interval = 0.5):
     deadline = time.ticks_add(time.ticks_ms(), connect_timeout)

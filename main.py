@@ -2,9 +2,11 @@ import led
 import wifi
 import settings
 import log
-import time
+import error
 
 led.status_normal()
 wifi.connect(settings.WIFI_NAME, settings.WIFI_PASSWORD, connect_timeout = 10_000)
-time.sleep(2)
-led.status_error()
+if wifi.is_connected():
+    log.message("WiFi OK")
+else:
+    error.status("WiFi Error")

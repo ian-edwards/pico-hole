@@ -1,10 +1,12 @@
 import network
 import time
+import log
 
-def wifi_connect(wifi_name, wifi_password):
+def connect(wifi_name, wifi_password):
     wifi = network.WLAN(network.STA_IF)
     wifi.active(True)
     wifi.connect(wifi_name, wifi_password)
+    log.message("connecting wifi...")
     while wifi.isconnected() == False:
         sleep(1)
-    print(wifi.ifconfig())
+    log.message("wifi connected!")

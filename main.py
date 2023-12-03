@@ -1,9 +1,11 @@
-from led import led_status_ok, led_status_error
-from wifi import wifi_connect
-from secrets import wifi_name, wifi_password
+import led
+import wifi
+import secrets
+import log
 import time
 
-led_status_ok()
-wifi_connect(wifi_name, wifi_password)
+log.message('starting...')
+led.status_active()
+wifi.connect(secrets.wifi_name, secrets.wifi_password)
 time.sleep(2)
-led_status_error(123)
+led.status_error()

@@ -1,11 +1,10 @@
 import led
 import wifi
-import secrets
+import settings
 import log
 import time
 
-log.message('starting...')
-led.status_active()
-wifi.connect(secrets.wifi_name, secrets.wifi_password)
+led.status_normal()
+wifi.connect(settings.WIFI_NAME, settings.WIFI_PASSWORD, connect_timeout = 10_000)
 time.sleep(2)
 led.status_error()

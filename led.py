@@ -1,7 +1,7 @@
 import machine
 import time
     
-def status_active():
+def status_normal():
     machine.Pin("LED", machine.Pin.OUT).off()
     
 def status_error():

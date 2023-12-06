@@ -5,5 +5,5 @@ from error import on_error
 import dns
 
 led_normal()
-wifi_connect(WIFI_NAME, WIFI_PASSWORD, on_error("WiFi Error"))
+wifi_connect(WIFI_NAME, WIFI_PASSWORD, lambda: on_error("WiFi Error"))
 print("WiFi OK!")

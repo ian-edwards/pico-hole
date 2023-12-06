@@ -1,11 +1,11 @@
-import machine
-import time
+from machine import Pin
+from time import sleep
     
-def status_normal():
-    machine.Pin("LED", machine.Pin.OUT).on()
+def led_normal():
+    Pin("LED", Pin.OUT).on()
     
-def status_error():
-    led = machine.Pin("LED", machine.Pin.OUT)
+def led_error():
+    led = Pin("LED", Pin.OUT)
     while (True):
         led.toggle()
-        time.sleep(0.5)
+        sleep(0.5)

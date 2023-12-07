@@ -1,10 +1,7 @@
-from machine import Pin
 from network import WLAN, STA_IF
 from time import ticks_ms, ticks_add, ticks_diff
 
 def raise_exception(error_message): raise Exception(error_message)
-
-def led_on(): Pin("LED", Pin.OUT).on()
 
 def connect_wifi(wifi_name, wifi_password, wifi_timeout):
     deadline = ticks_add(ticks_ms(), wifi_timeout)
@@ -15,7 +12,6 @@ def connect_wifi(wifi_name, wifi_password, wifi_timeout):
         pass
     return wifi.isconnected()
 
-led_on()
 connect_wifi(wifi_name="Your WiFi Name", wifi_password="Your WiFi Password", wifi_timeout=5_000) or raise_exception("Wifi Error!")
 
 print("WiFi OK!")

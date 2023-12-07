@@ -1,5 +1,5 @@
 from network import WLAN, STA_IF
-from time import ticks_ms, ticks_add, ticks_diff, sleep
+from time import ticks_ms, ticks_add, ticks_diff
 
 def raise_exception(error_message): raise Exception(error_message)
 
